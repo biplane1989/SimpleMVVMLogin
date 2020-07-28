@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="LoginViewModel"
+            type="com.example.simplemvvmlogin.viewmodel.LoginViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{LoginViewModel.title}"
+            android:textSize="32sp" />
+
+        <EditText
+            android:id="@+id/edt_accout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@{LoginViewModel.accout}" />
+
+        <EditText
+            android:id="@+id/edt_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@{LoginViewModel.password}" />
+
+        <Button
+            android:id="@+id/btn_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> LoginViewModel.onOKClick()}"
+            android:text="@{LoginViewModel.ok}" />
+
+    </LinearLayout>
+</layout>
